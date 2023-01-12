@@ -7,10 +7,16 @@
       expedita debitis autem, maiores molestias inventore alias aperiam
       blanditiis voluptates?
     </p>
+    <div>{{ data }}</div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const { data } = await useFetch("api/ninja?name=mario", {
+  method: "post",
+  body: { age: 30 },
+});
+</script>
 
 <style scoped>
 h2 {
